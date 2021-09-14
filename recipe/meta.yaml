@@ -1,5 +1,5 @@
 {% set name = "tpi" %}
-{% set version = "0.1.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5e7dc5262d81f82dfe3def1f791769ed6024c0791ee52edc841906796dd01778
+  sha256: 739b9c98a96ead6a0b8b5d3d85afc4f56443ec1cc04a3e60abc08af4930830a5
 
 build:
   noarch: python
@@ -24,11 +24,10 @@ requirements:
     - toml
   run:
     - python >=3.4
-    - sshfs >=2021.7.1
+    - asyncssh
     - funcy
     - jinja2 >=2.0.0
     - miutil >=0.7.0
-    - requests
     - python-terraform >=0.10.1
     - setuptools
 
