@@ -1,5 +1,5 @@
 {% set name = "tpi" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e79d1facaf2e818d4f98325abddcf3fac71e8ee5cf480bb2c1ef68d32577b771
+  sha256: 39a0c62ba83c9461600a6d7ba7a6c7567750962ed8c660157c8bafde013fc2cd
 
 build:
   noarch: python
