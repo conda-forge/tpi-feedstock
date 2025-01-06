@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 8275325c3f5a67590170b55e16854acbae7248c46e933255affbcb6a6643de5b
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - tpi = tpi.main:main
 
 requirements:
   host:
-    - python >=3.4
+    - python {{ python_min }}
     - pip
     - setuptools_scm >=3.4
     - toml
   run:
-    - python >=3.4
+    - python >={{ python_min }}
     - asyncssh
     - funcy
     - jinja2 >=2.0.0
@@ -32,6 +32,8 @@ requirements:
     - setuptools
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - tpi
     - tpi.bin
